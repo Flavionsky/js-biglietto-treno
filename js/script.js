@@ -10,16 +10,19 @@ console.log(eta);
 
 var priceTicket = 0.21;
 
-if (eta >= 18 && eta <= 65){
+if (eta < 18){
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + priceTicket * kmToGo + "\u20AC");
-
-} else if (eta < 18) {
   alert("Hai diritto ad uno sconto del 20%!");
 
   document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.8 ) + "\u20AC");
-}  else if (eta > 65) {
+} else if (eta > 65){
+
   alert("Hai diritto ad uno sconto del 40%!");
 
   document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.6 ) + "\u20AC");
+
+} else {
+
+  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + priceTicket * kmToGo + "\u20AC");
+
 }

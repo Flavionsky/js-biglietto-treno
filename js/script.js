@@ -10,7 +10,7 @@ console.log(eta);
 
 var priceTicket = 0.21;
 
-if (eta > 18 && eta < 65){
+if (eta >= 18 && eta <= 65){
 
   document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + priceTicket * kmToGo + "\u20AC");
 

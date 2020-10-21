@@ -1,28 +1,62 @@
-var kmToGo = prompt("Inserisca i chilometri da percorrere :");
+function getRandom(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-// debug
-console.log(kmToGo);
+// definisco una variabile costante
+var PRICE_KM = 0.21;
 
-var eta = prompt("Inserisca la sua età :");
+// prendo il bottone dall'HTML
+var genBtnEl = document.getElementById('generateButton');
 
-// debug
-console.log(eta);
+// do istruzioni al bottone su come reagire al click
+genBtnEl.addEventListener('click', function(){
 
-var priceTicket = 0.21;
 
-if (eta < 18){
+// prendo gli elementi che mi servono dall'html
+var nameAndSurnameEl = document.getElementById("nameAndSurname").value;
+var kmToGoEl = document.getElementById("kmToGo").value;
+var groupAgeEl = document.getElementById("groupAge").value;
+console.log(nameAndSurnameEl, kmToGoEl, groupAgeEl);
 
-  alert("Hai diritto ad uno sconto del 20%!");
+if (groupAgeEl == "minorenne"){
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.8 ).toFixed(2) + "\u20AC");
-} else if (eta > 65){
+  var discMessage = document.getElementById("discMessage").innerHTML = "Hai diritto ad uno sconto del 20%!";
 
-  alert("Hai diritto ad uno sconto del 40%!");
+  var priceEl = document.getElementById("price").innerHTML = (((kmToGoEl * PRICE_KM) * 0.8 ).toFixed(2) + "\u20AC" );
+} else if (groupAgeEl == "over65"){
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.6 ).toFixed(2) + "\u20AC");
+	var discMessage = document.getElementById("discMessage").innerHTML = "Hai diritto ad uno sconto del 40%!";
 
-} else {
+  var priceEl = document.getElementById("price").innerHTML = (((kmToGoEl * PRICE_KM) * 0.6 ).toFixed(2) + "\u20AC" );
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + (priceTicket * kmToGo).toFixed(2) + "\u20AC");
+
+} else if (groupAgeEl == "18-65"){
+
+	var discMessage = document.getElementById("discMessage").innerHTML = "Non hai diritto a nessuno sconto";
+
+  var priceEl = document.getElementById("price").innerHTML = ((kmToGoEl * PRICE_KM).toFixed(2) + "\u20AC" );
 
 }
+//aggiorno gli input presi e li rinserisco in output sull'HTML
+var ticketNameEl = document.getElementById('namePassenger');
+ticketNameEl.innerHTML = nameAndSurnameEl;
+
+document.getElementById("wagon").innerHTML =( getRandom(1, 20));
+document.getElementById("seat").innerHTML =( getRandom(90000, 100000));
+
+});
+
+// prendo il bottone dall'HTML
+var delBtnEl = document.getElementById('deleteButton');
+delBtnEl.addEventListener('click', function(){
+
+   var nameAndSurnameEl = document.getElementById('nameAndSurname').innerHTML = "";
+	 var ticketNameEl = document.getElementById('namePassenger').innerHTML = "";
+   var discMessage = document.getElementById("discMessage").innerHTML = "";
+	 var priceEl = document.getElementById("price").innerHTML = "";
+	 var kmToGoEl = document.getElementById("kmToGo").innerHTML = "";
+	 document.getElementById("wagon").innerHTML ="";
+	 document.getElementById("seat").innerHTML ="";
+	});

@@ -2,10 +2,84 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Il tuo biglietto</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- my css -->
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <h1 style="background-color: white; text-align: center;" id="price"></h1>
-  <body style="background-image: url('img/train-station.jpg');">
-  <script src="js/script.js" charset="utf-8"></script>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>CALCOLA IL PREZZO DEL BIGLIETTO</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <p>Nome Cognome</p>
+          <input id="nameAndSurname" type="text" name="nameandsurname" value="">
+        </div>
+        <div class="col-xs-4">
+          <p>Km da percorrere</p>
+          <input id="kmToGo" type="number" name="kmToGo" value="">
+        </div>
+        <div class="col-xs-4">
+          <p>Fascia d'età</p>
+          <select id="groupAge" name="Fascia d'età">
+            <option value="minorenne">Minorenne</option>
+            <option value="18-65">dai 18 ai 65</option>
+            <option value="over65">Over 65</option>
+          </select>
+        </div>
+        <div class="col-xs-12">
+          <button id="generateButton">Genera</button>
+          <button id="deleteButton">Annulla</button>
+        </div>
+      </div>
+    </div>
+    <div class="container yourTicket">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>IL TUO BIGLIETTO</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>DETTAGLIO PASSEGGERI</h3>
+          <hr>
+          <div class="container_flex">
+            <div class="namePassengers">
+              <div>
+                NOME PASSEGGERO:
+              </div>
+              <div id="namePassenger">
+              </div>
+            </div>
+            <div class="passengersDetails">
+              <ul class="container_flex">
+                <li>Offerta</li>
+                <li>Carrozza</li>
+                <li>CODICE CP</li>
+                <li>Costo biglietto</li>
+              </ul>
+              <ul class="container_flex">
+                <li id="discount">
+                  <div id="discMessage">
+
+                  </div>
+                </li>
+                <li id="wagon"></li>
+                <li id="seat"></li>
+                <li id="price"></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>

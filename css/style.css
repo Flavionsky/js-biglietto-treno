@@ -1,0 +1,75 @@
+body{
+  background-color: #B91450;
+  color: white;
+}
+.container_flex{
+  display: flex;
+}
+.container:first-child {
+  color: white;
+  text-align: center;
+}
+
+.container:first-child .row:last-child{
+  border-radius: 10px;
+  background-color: white;
+  color: #B91450;
+}
+
+.container:first-child .row:last-child p{
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+.container:first-child .row:last-child select, .container:first-child .row:last-child input{
+  text-align: center;
+  border: 1px solid #B91450;
+  padding: 5px 10px 5px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  color: black;
+}
+.container:first-child .row:last-child button{
+  border:2px solid lightgrey;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 50px;
+  font-weight: bold;
+}
+.container:first-child .row:last-child button:hover{
+  border: 2px solid #8B4F8C;
+}
+button:first-child{
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+button:last-child{
+  margin-left: 10px;
+}
+.yourTicket > .row:last-child{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+.yourTicket h1{
+  padding-top: 20px;
+  text-align: center;
+}
+.namePassengers {
+  width: 20%;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: grey;
+}
+.passengersDetails{
+  width: 80%;
+}
+.passengersDetails ul{
+  list-style-type: none;
+  justify-content: space-between;
+}
+.passengersDetails ul li{
+  font-size: 24px;
+  font-weight: bold;
+  width: calc(100% / 4);
+}

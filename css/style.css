@@ -46,6 +46,26 @@ button:first-child{
 button:last-child{
   margin-left: 10px;
 }
+button:hover {
+    animation: rotate-45 0.2s linear;
+}
+@keyframes rotate-45 {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
 .yourTicket > .row:last-child{
   background-color: white;
   color: black;

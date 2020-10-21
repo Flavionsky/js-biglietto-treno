@@ -14,15 +14,15 @@ if (eta < 18){
 
   alert("Hai diritto ad uno sconto del 20%!");
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.8 ) + "\u20AC");
+  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.8 ).toFixed(2) + "\u20AC");
 } else if (eta > 65){
 
   alert("Hai diritto ad uno sconto del 40%!");
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.6 ) + "\u20AC");
+  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + ((priceTicket * kmToGo) * 0.6 ).toFixed(2) + "\u20AC");
 
 } else {
 
-  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + priceTicket * kmToGo + "\u20AC");
+  document.getElementById("price").innerHTML =('Il prezzo del tuo biglietto è di : ' + (priceTicket * kmToGo).toFixed(2) + "\u20AC");
 
 }

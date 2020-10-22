@@ -17,24 +17,25 @@ genBtnEl.addEventListener('click', function(){
 // prendo gli elementi che mi servono dall'html
 var nameAndSurnameEl = document.getElementById("nameAndSurname").value;
 var kmToGoEl = document.getElementById("kmToGo").value;
+var discMessageEl = document.getElementById("discMessage");
 var groupAgeEl = document.getElementById("groupAge").value;
 console.log(nameAndSurnameEl, kmToGoEl, groupAgeEl);
 
 if (groupAgeEl == "minorenne"){
 
-  var discMessage = document.getElementById("discMessage").innerHTML = "Hai diritto ad uno sconto del 20%!";
+  discMessageEl.innerHTML = "Hai diritto ad uno sconto del 20%!";
 
   var priceEl = document.getElementById("price").innerHTML = (((kmToGoEl * PRICE_KM) * 0.8 ).toFixed(2) + "\u20AC" );
 } else if (groupAgeEl == "over65"){
 
-	var discMessage = document.getElementById("discMessage").innerHTML = "Hai diritto ad uno sconto del 40%!";
+	discMessageEl.innerHTML = "Hai diritto ad uno sconto del 40%!";
 
   var priceEl = document.getElementById("price").innerHTML = (((kmToGoEl * PRICE_KM) * 0.6 ).toFixed(2) + "\u20AC" );
 
 
 } else if (groupAgeEl == "18-65"){
 
-	var discMessage = document.getElementById("discMessage").innerHTML = "Non hai diritto a nessuno sconto";
+	discMessageEl.innerHTML = "Non hai diritto a nessuno sconto";
 
   var priceEl = document.getElementById("price").innerHTML = ((kmToGoEl * PRICE_KM).toFixed(2) + "\u20AC" );
 

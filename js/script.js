@@ -50,13 +50,18 @@ document.getElementById("seat").innerHTML =( getRandom(90000, 100000));
 
 // prendo il bottone dall'HTML
 var delBtnEl = document.getElementById('deleteButton');
+
 delBtnEl.addEventListener('click', function(){
 
-   var nameAndSurnameEl = document.getElementById('nameAndSurname').innerHTML = "";
+   var nameAndSurnameEl = document.getElementById('nameAndSurname');
+	 var groupAgeEl = document.getElementById("groupAge");
+	 var kmToGoEl = document.getElementById("kmToGo");
 	 var ticketNameEl = document.getElementById('namePassenger').innerHTML = "";
    var discMessage = document.getElementById("discMessage").innerHTML = "";
 	 var priceEl = document.getElementById("price").innerHTML = "";
-	 var kmToGoEl = document.getElementById("kmToGo").innerHTML = "";
 	 document.getElementById("wagon").innerHTML ="";
 	 document.getElementById("seat").innerHTML ="";
+	 nameAndSurnameEl.value = "";
+	 kmToGoEl.value = "";
+	 groupAgeEl.value = "default";
 	});
